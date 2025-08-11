@@ -1,0 +1,1204 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#"
+     xml:base="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology"
+     xmlns:gr="http://purl.org/goodrelations/v1#"
+     xmlns:io="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#"
+     xmlns:ns="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:rec="https://w3id.org/rec#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:sioc="http://rdfs.org/sioc/ns#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:brick="https://brickschema.org/schema/Brick#"
+     xmlns:pronto="https://raw.githubusercontent.com/fdioguardi/pronto/main/ontology/pronto.owl#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2003/06/sw-vocab-status/ns#term_status -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/06/sw-vocab-status/ns#term_status"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#definition -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#definition"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#editorialNote -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#editorialNote"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/terms/partOf -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/terms/partOf"/>
+    
+
+
+    <!-- http://purl.org/goodrelations/v1#hasBusinessFunction -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/goodrelations/v1#hasBusinessFunction">
+        <rdfs:domain rdf:resource="http://purl.org/goodrelations/v1#Offering"/>
+        <rdfs:range rdf:resource="http://purl.org/goodrelations/v1#BusinessFunction"/>
+        <rdfs:label xml:lang="en">This specifies the business function of the gr:Offering, i.e. whether the gr:BusinessEntity is offering to sell, to lease, or to repair the particular type of product. In the case of bundles, it is also possible to attach individual business functions to each gr:TypeAndQuantityNode. The business function of the main gr:Offering determines the business function for all included objects or services, unless a business function attached to a gr:TypeAndQuantityNode overrides it.
+	
+Note: While it is possible that an entity is offering multiple types of business functions for the same set of objects (e.g. rental and sales), this should usually not be stated by attaching multiple business functions to the same gr:Offering, since the gr:UnitPriceSpecification for the varying business functions will typically be very different.</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+        <rdfs:label xml:lang="en">has business function (1..*)</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#about -->
+
+    <owl:ObjectProperty rdf:about="http://rdfs.org/sioc/ns#about">
+        <rdfs:domain rdf:resource="http://rdfs.org/sioc/ns#Item"/>
+        <rdfs:label xml:lang="en">Specifies that this Item is about a particular resource, e.g. a Post describing a book, hotel, etc.</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="http://rdfs.org/sioc/ns#"/>
+        <rdfs:label xml:lang="en">about</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#account_of -->
+
+    <owl:ObjectProperty rdf:about="http://rdfs.org/sioc/ns#account_of">
+        <owl:inverseOf rdf:resource="http://xmlns.com/foaf/0.1/account"/>
+        <rdfs:domain rdf:resource="http://rdfs.org/sioc/ns#UserAccount"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdfs:label xml:lang="en">Refers to the foaf:Agent or foaf:Person who owns this sioc:UserAccount.</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="http://rdfs.org/sioc/ns#"/>
+        <rdfs:label xml:lang="en">account of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#container_of -->
+
+    <owl:ObjectProperty rdf:about="http://rdfs.org/sioc/ns#container_of">
+        <owl:inverseOf rdf:resource="http://rdfs.org/sioc/ns#has_container"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#creator_of -->
+
+    <owl:ObjectProperty rdf:about="http://rdfs.org/sioc/ns#creator_of">
+        <owl:inverseOf rdf:resource="http://rdfs.org/sioc/ns#has_creator"/>
+        <rdfs:domain rdf:resource="http://rdfs.org/sioc/ns#UserAccount"/>
+        <rdfs:label xml:lang="en">A resource that the UserAccount is a creator of.</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="http://rdfs.org/sioc/ns#"/>
+        <rdfs:label xml:lang="en">creator of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#has_container -->
+
+    <owl:ObjectProperty rdf:about="http://rdfs.org/sioc/ns#has_container">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/partOf"/>
+        <rdfs:domain rdf:resource="http://rdfs.org/sioc/ns#Item"/>
+        <rdfs:range rdf:resource="http://rdfs.org/sioc/ns#Container"/>
+        <rdfs:label xml:lang="en">The Container to which this Item belongs.</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="http://rdfs.org/sioc/ns#"/>
+        <rdfs:label xml:lang="en">has container</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#has_creator -->
+
+    <owl:ObjectProperty rdf:about="http://rdfs.org/sioc/ns#has_creator">
+        <rdfs:domain rdf:resource="http://rdfs.org/sioc/ns#Post"/>
+        <rdfs:range rdf:resource="http://rdfs.org/sioc/ns#UserAccount"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#has_host -->
+
+    <owl:ObjectProperty rdf:about="http://rdfs.org/sioc/ns#has_host">
+        <rdfs:subPropertyOf rdf:resource="http://rdfs.org/sioc/ns#has_space"/>
+        <owl:inverseOf rdf:resource="http://rdfs.org/sioc/ns#host_of"/>
+        <rdfs:domain rdf:resource="http://rdfs.org/sioc/ns#Container"/>
+        <rdfs:range rdf:resource="http://rdfs.org/sioc/ns#Site"/>
+        <rdfs:label xml:lang="en">The Site that hosts this Container.</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="http://rdfs.org/sioc/ns#"/>
+        <rdfs:label xml:lang="en">has host</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#has_modifier -->
+
+    <owl:ObjectProperty rdf:about="http://rdfs.org/sioc/ns#has_modifier">
+        <owl:inverseOf rdf:resource="http://rdfs.org/sioc/ns#modifier_of"/>
+        <rdfs:range rdf:resource="http://rdfs.org/sioc/ns#UserAccount"/>
+        <rdfs:label xml:lang="en">A UserAccount that modified this resource (e.g. Item, Container, Space).</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="http://rdfs.org/sioc/ns#"/>
+        <rdfs:label xml:lang="en">has modifier</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#has_owner -->
+
+    <owl:ObjectProperty rdf:about="http://rdfs.org/sioc/ns#has_owner">
+        <owl:inverseOf rdf:resource="http://rdfs.org/sioc/ns#owner_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#has_space -->
+
+    <owl:ObjectProperty rdf:about="http://rdfs.org/sioc/ns#has_space">
+        <rdfs:range rdf:resource="http://rdfs.org/sioc/ns#Space"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#host_of -->
+
+    <owl:ObjectProperty rdf:about="http://rdfs.org/sioc/ns#host_of">
+        <rdfs:subPropertyOf rdf:resource="http://rdfs.org/sioc/ns#space_of"/>
+        <rdfs:domain rdf:resource="http://rdfs.org/sioc/ns#Site"/>
+        <rdfs:range rdf:resource="http://rdfs.org/sioc/ns#Container"/>
+        <rdfs:label xml:lang="en">A Container that is hosted on this Site.</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="http://rdfs.org/sioc/ns#"/>
+        <rdfs:label xml:lang="en">host of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#modifier_of -->
+
+    <owl:ObjectProperty rdf:about="http://rdfs.org/sioc/ns#modifier_of">
+        <rdfs:domain rdf:resource="http://rdfs.org/sioc/ns#UserAccount"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Feature"/>
+        <rdfs:label xml:lang="en">A resource that this UserAccount has modified.</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="http://rdfs.org/sioc/ns#"/>
+        <rdfs:label xml:lang="en">modifier of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#owner_of -->
+
+    <owl:ObjectProperty rdf:about="http://rdfs.org/sioc/ns#owner_of">
+        <rdfs:domain rdf:resource="http://rdfs.org/sioc/ns#UserAccount"/>
+        <rdfs:label xml:lang="en">A resource owned by a particular UserAccount, for example, a weblog or image gallery.</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="http://rdfs.org/sioc/ns#"/>
+        <rdfs:label xml:lang="en">owner of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#space_of -->
+
+    <owl:ObjectProperty rdf:about="http://rdfs.org/sioc/ns#space_of"/>
+    
+
+
+    <!-- http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#curatedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#curatedBy">
+        <rdfs:subPropertyOf rdf:resource="http://rdfs.org/sioc/ns#has_modifier"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#hasAVETime -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#hasAVETime">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2006/time#hasTime"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#hasCurationTime -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#hasCurationTime">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2006/time#hasTime"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#hasDetail -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#hasDetail">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Feature"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#hasFeature -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#hasFeature">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/fdioguardi/pronto/main/ontology/pronto.owl#RealEstateListing"/>
+                    <rdf:Description rdf:about="https://w3id.org/rec#RealEstate"/>
+                    <rdf:Description rdf:about="https://w3id.org/rec#Space"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Feature"/>
+        <rdfs:label>Característica extraída a partir del web scraper</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#hasScraperTime -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#hasScraperTime">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2006/time#hasTime"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#neighborhood -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#neighborhood">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#PostalAddress"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Neighborhood"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#province -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#province">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#PostalAddress"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Province"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#reviewedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#reviewedBy">
+        <rdfs:subPropertyOf rdf:resource="http://rdfs.org/sioc/ns#has_modifier"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2006/time#hasTime -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2006/time#hasTime">
+        <rdfs:range rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+        <rdfs:label xml:lang="es">Proporciona soporte a la asociación de una entidad temporal (instante o intervalo) a cualquier cosa.</rdfs:label>
+        <rdfs:label xml:lang="en">Supports the association of a temporal entity (instant or interval) to any thing</rdfs:label>
+        <rdfs:label xml:lang="en">has time</rdfs:label>
+        <rdfs:label xml:lang="es">tiene tiempo</rdfs:label>
+        <skos:definition xml:lang="es">Proporciona soporte a la asociación de una entidad temporal (instante o intervalo) a cualquier cosa.</skos:definition>
+        <skos:definition xml:lang="en">Supports the association of a temporal entity (instant or interval) to any thing</skos:definition>
+        <skos:editorialNote xml:lang="es">Característica arriesgada -añadida en la revisión del 2017 que no ha sido todavía utilizada de forma amplia.</skos:editorialNote>
+        <skos:editorialNote xml:lang="en">Feature at risk - added in 2017 revision, and not yet widely used. </skos:editorialNote>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/account -->
+
+    <owl:ObjectProperty rdf:about="http://xmlns.com/foaf/0.1/account"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/made -->
+
+    <owl:ObjectProperty rdf:about="http://xmlns.com/foaf/0.1/made">
+        <owl:inverseOf rdf:resource="http://xmlns.com/foaf/0.1/maker"/>
+        <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:label>Something that was made by this agent.</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+        <rdfs:label>made</rdfs:label>
+        <ns:term_status>stable</ns:term_status>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/maker -->
+
+    <owl:ObjectProperty rdf:about="http://xmlns.com/foaf/0.1/maker">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+        <rdfs:label>An agent that  made this thing.</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+        <rdfs:label>maker</rdfs:label>
+        <ns:term_status>stable</ns:term_status>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://brickschema.org/schema/Brick#hasPart -->
+
+    <owl:ObjectProperty rdf:about="https://brickschema.org/schema/Brick#hasPart">
+        <owl:inverseOf rdf:resource="https://brickschema.org/schema/Brick#isPartOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rec#Space"/>
+        <rdfs:range rdf:resource="https://w3id.org/rec#Space"/>
+        <rdfs:label>Has part</rdfs:label>
+        <skos:definition xml:lang="en">The subject is composed in part of the entity given by the object</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://brickschema.org/schema/Brick#isPartOf -->
+
+    <owl:ObjectProperty rdf:about="https://brickschema.org/schema/Brick#isPartOf"/>
+    
+
+
+    <!-- https://w3id.org/rec#city -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rec#city">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#PostalAddress"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#City"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rec#geometry -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rec#geometry">
+        <rdfs:domain rdf:resource="https://w3id.org/rec#Space"/>
+        <rdfs:range rdf:resource="https://w3id.org/rec#Geometry"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rec#includedIn -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rec#includedIn">
+        <owl:inverseOf rdf:resource="https://w3id.org/rec#includes"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rec#includes -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rec#includes">
+        <rdfs:domain rdf:resource="https://w3id.org/rec#RealEstate"/>
+        <rdfs:range rdf:resource="https://w3id.org/rec#Architecture"/>
+        <rdfs:label xml:lang="en">Member entities of a collection; e.g., a Campus includes some Space, an Apartment includes some Room, etc.</rdfs:label>
+        <rdfs:label xml:lang="en">includes</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rec#isLocationOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rec#isLocationOf">
+        <owl:inverseOf rdf:resource="https://w3id.org/rec#locatedIn"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/rec#locatedIn -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/rec#locatedIn">
+        <rdfs:range rdf:resource="https://w3id.org/rec#Space"/>
+        <rdfs:label xml:lang="en">located in</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/title">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:label xml:lang="en">title</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/goodrelations/v1#condition -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/goodrelations/v1#condition">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:label xml:lang="en">A textual description of the condition of the product or service, or the products or services included in the offer (when attached to a gr:Offering)</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+        <rdfs:label xml:lang="en">condition (0..1)</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/goodrelations/v1#hasCurrency -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/goodrelations/v1#hasCurrency">
+        <rdfs:domain rdf:resource="http://purl.org/goodrelations/v1#PriceSpecification"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">The currency for all prices in the gr:PriceSpecification given using the ISO 4217 standard (3 characters).</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+        <rdfs:label xml:lang="en">has currency (1..1)</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/goodrelations/v1#hasUnitOfMeasurement -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/goodrelations/v1#hasUnitOfMeasurement">
+        <rdfs:domain rdf:resource="http://purl.org/goodrelations/v1#QuantitativeValue"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">The unit of measurement for a gr:QuantitativeValue, a gr:UnitPriceSpecification, or a gr:TypeAndQuantityNode given using the UN/CEFACT Common Code (3 characters).</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+        <rdfs:label xml:lang="en">has unit of measurement (1..1)</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/goodrelations/v1#hasValue -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/goodrelations/v1#hasValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/goodrelations/v1#QuantitativeValue"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:label xml:lang="en">This subproperty specifies that the upper and lower limit of the given gr:QuantitativeValue are identical and have the respective value. It is a shortcut for such cases where a quantitative property is (at least practically) a single point value and not an interval.</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+        <rdfs:label xml:lang="en">has value (0..1)</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/goodrelations/v1#priceType -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/goodrelations/v1#priceType">
+        <rdfs:domain rdf:resource="http://purl.org/goodrelations/v1#UnitPriceSpecification"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">This attribute can be used to distinguish multiple different price specifications for the same gr:Offering. It supersedes the former gr:isListPrice property. The following values are recommended:
+
+The absence of this property marks the actual sales price.
+
+SRP: &quot;suggested retail price&quot; - applicable for all sorts of a non-binding retail price recommendations, e.g. such published by the manufacturer or the distributor. This value replaces the former gr:isListPrice property.
+
+INVOICE: The invoice price, mostly used in the car industry - this is the price a dealer pays to the manufacturer, excluding rebates and charges.</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+        <rdfs:label xml:lang="en">price type (0..1)</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#id -->
+
+    <owl:DatatypeProperty rdf:about="http://rdfs.org/sioc/ns#id">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:label xml:lang="en">An identifier of a SIOC concept instance. For example, a user ID. Must be unique for instances of each type of SIOC concept within the same site.</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="http://rdfs.org/sioc/ns#"/>
+        <rdfs:label xml:lang="en">id</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#name -->
+
+    <owl:DatatypeProperty rdf:about="http://rdfs.org/sioc/ns#name">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:label xml:lang="en">The name of a SIOC concept instance, e.g. a username for a UserAccount, group name for a Usergroup, etc.</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="http://rdfs.org/sioc/ns#"/>
+        <rdfs:label xml:lang="en">name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#read_at -->
+
+    <owl:DatatypeProperty rdf:about="http://rdfs.org/sioc/ns#read_at">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/fdioguardi/pronto/main/ontology/pronto.owl#luminosity -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/fdioguardi/pronto/main/ontology/pronto.owl#luminosity">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rec#Space"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">The brightness or luminosity of the property.</rdfs:label>
+        <rdfs:label xml:lang="en">luminosity</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/fdioguardi/pronto/main/ontology/pronto.owl#orientation -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/fdioguardi/pronto/main/ontology/pronto.owl#orientation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/rec#Space"/>
+        <rdfs:label xml:lang="en">Where the property is facing.</rdfs:label>
+        <rdfs:label xml:lang="en">orientation</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/fdioguardi/pronto/main/ontology/pronto.owl#size_type -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/fdioguardi/pronto/main/ontology/pronto.owl#size_type">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">The type of surface measured by a SizeSpecification, e.g. &quot;Covered&quot;, &quot;Total&quot;.</rdfs:label>
+        <rdfs:label xml:lang="en">size type (0..1)</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/rec#coordinates -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/rec#coordinates">
+        <rdfs:domain rdf:resource="https://w3id.org/rec#Point"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/goodrelations/v1#BusinessFunction -->
+
+    <owl:Class rdf:about="http://purl.org/goodrelations/v1#BusinessFunction">
+        <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#PriceSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/goodrelations/v1#Offering -->
+
+    <owl:Class rdf:about="http://purl.org/goodrelations/v1#Offering">
+        <owl:disjointWith rdf:resource="http://purl.org/goodrelations/v1#PriceSpecification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/goodrelations/v1#PriceSpecification -->
+
+    <owl:Class rdf:about="http://purl.org/goodrelations/v1#PriceSpecification">
+        <rdfs:label xml:lang="en">The superclass of all price specifications.</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+        <rdfs:label xml:lang="en">Price specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/goodrelations/v1#QuantitativeValue -->
+
+    <owl:Class rdf:about="http://purl.org/goodrelations/v1#QuantitativeValue"/>
+    
+
+
+    <!-- http://purl.org/goodrelations/v1#UnitPriceSpecification -->
+
+    <owl:Class rdf:about="http://purl.org/goodrelations/v1#UnitPriceSpecification">
+        <rdfs:subClassOf rdf:resource="http://purl.org/goodrelations/v1#PriceSpecification"/>
+        <rdfs:label xml:lang="en">A unit price specification is a conceptual entity that specifies the price asked for a given gr:Offering by the respective gr:Business Entity. An offering may be linked to multiple unit price specifications that specify alternative prices for non-overlapping sets of conditions (e.g. quantities or sales regions) or with differing validity periods. 
+
+A unit price specification is characterized by (1) the lower and upper limits and the unit of measurement of the eligible quantity, (2) by a monetary amount per unit of the product or service, and (3)  whether this prices includes local sales taxes, namely VAT.
+	
+Example: The price, including VAT, for 1 kg of a given material is 5 Euros per kg for 0 - 5 kg and 4 Euros for quantities above 5 kg.
+
+The eligible quantity interval for a given price is specified using the object property gr:hasEligibleQuantity, which points to an instance of gr:QuantitativeValue. The currency is specified using the gr:hasCurrency property, which points to an ISO 4217 currency code. The unit of measurement for the eligible quantity is specified using the gr:hasUnitOfMeasurement datatype property, which points to an UN/CEFACT Common Code (3 characters).
+	
+In most cases, the appropriate unit of measurement is the UN/CEFACT Common Code &quot;C62&quot; for &quot;Unit or piece&quot;, since a gr:Offering is defined by the quantity and unit of measurement of all items included (e.g. &quot;1 kg of bananas plus a 2 kg of apples&quot;). As long at the offering consists of only one item, it is also possible to use an unit of measurement of choice for specifying the price per unit. For bundles, however, only  &quot;C62&quot; for &quot;Unit or piece&quot; is a valid unit of measurement.
+
+You can assume that the price is given per unit or piece if there is no gr:hasUnitOfMeasurement property attached to the price.
+	
+Whether VAT and sales taxes are included in this price is specified using the property gr:valueAddedTaxIncluded (xsd:boolean).
+	
+The price per unit of measurement is specified as a float value of the gr:hasCurrencyValue property. The currency is specified via the gr:hasCurrency datatype property. Whether the price includes VAT or not is indicated by the gr:valueAddedTaxIncluded datatype property.
+
+The property priceType can be used to indicate that the price is a retail price recommendation only (i.e. a list price). 
+
+If the price can only be given as a range, use gr:hasMaxCurrencyValue and gr:hasMinCurrencyValue for the upper and lower bounds.
+
+Important: When querying for the price, always use gr:hasMaxCurrencyValue and gr:hasMinCurrencyValue.
+
+Note 1: Due to the complexity of pricing scenarios in various industries, it may be necessary to create extensions of this fundamental model of price specifications. Such can be done easily by importing and refining the GoodRelations ontology.
+
+Note 2: For Google, attaching a gr:validThrough statement to a gr:UnitPriceSpecification is mandatory. 
+</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/goodrelations/v1"/>
+        <rdfs:label xml:lang="en">Unit price specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#Container -->
+
+    <owl:Class rdf:about="http://rdfs.org/sioc/ns#Container">
+        <owl:disjointWith rdf:resource="http://rdfs.org/sioc/ns#Item"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#Forum -->
+
+    <owl:Class rdf:about="http://rdfs.org/sioc/ns#Forum">
+        <rdfs:subClassOf rdf:resource="http://rdfs.org/sioc/ns#Container"/>
+        <rdfs:label xml:lang="en">A discussion area on which Posts or entries are made.</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="http://rdfs.org/sioc/ns#"/>
+        <rdfs:label xml:lang="en">Forum</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#Item -->
+
+    <owl:Class rdf:about="http://rdfs.org/sioc/ns#Item">
+        <owl:disjointWith rdf:resource="http://rdfs.org/sioc/ns#Space"/>
+        <owl:disjointWith rdf:resource="http://rdfs.org/sioc/ns#UserAccount"/>
+        <rdfs:label xml:lang="en">An Item is something which can be in a Container.</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="http://rdfs.org/sioc/ns#"/>
+        <rdfs:label xml:lang="en">Item</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#Post -->
+
+    <owl:Class rdf:about="http://rdfs.org/sioc/ns#Post">
+        <rdfs:subClassOf rdf:resource="http://rdfs.org/sioc/ns#Item"/>
+        <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+        <rdfs:label xml:lang="en">An article or message that can be posted to a Forum.</rdfs:label>
+        <rdfs:isDefinedBy rdf:resource="http://rdfs.org/sioc/ns#"/>
+        <rdfs:label xml:lang="en">Post</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#Site -->
+
+    <owl:Class rdf:about="http://rdfs.org/sioc/ns#Site">
+        <rdfs:subClassOf rdf:resource="http://rdfs.org/sioc/ns#Space"/>
+    </owl:Class>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#Space -->
+
+    <owl:Class rdf:about="http://rdfs.org/sioc/ns#Space"/>
+    
+
+
+    <!-- http://rdfs.org/sioc/ns#UserAccount -->
+
+    <owl:Class rdf:about="http://rdfs.org/sioc/ns#UserAccount"/>
+    
+
+
+    <!-- http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#AVE -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#AVE">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Origin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Address -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Address">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Apartment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Apartment">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rec#RealEstate"/>
+        <rdfs:label xml:lang="es-ar">Departamento</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#City -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#City">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rec#Region"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#CondominiumUnit -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#CondominiumUnit">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rec#RealEstate"/>
+        <rdfs:label xml:lang="es-ar">Lote PH</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#CornerLot -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#CornerLot">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Curation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Curation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Origin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Dimensions -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Dimensions">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#FOT -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#FOT">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#FacadesAmnt -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#FacadesAmnt">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Farm -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Farm">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rec#RealEstate"/>
+        <rdfs:label xml:lang="es-ar">Campo</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Feature -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Feature">
+        <rdfs:label xml:lang="en">Feature</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Hotel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Hotel">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rec#RealEstate"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#House -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#House">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rec#RealEstate"/>
+        <rdfs:label xml:lang="es-ar">Casa</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#IrregularLot -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#IrregularLot">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Lot -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Lot">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rec#RealEstate"/>
+        <rdfs:label xml:lang="es-ar">Terreno</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Neighborhood -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Neighborhood">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Feature"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rec#Region"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Origin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Origin"/>
+    
+
+
+    <!-- http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#ParkingLot -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#ParkingLot">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rec#RealEstate"/>
+        <rdfs:label xml:lang="es-ar">Cochera</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#PostalAddress -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#PostalAddress"/>
+    
+
+
+    <!-- http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Price -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Price">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#PropertyAge -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#PropertyAge">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Province -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Province">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rec#Region"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#RoomAmnt -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#RoomAmnt">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Scraper -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Scraper">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Origin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Store -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Store">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rec#RealEstate"/>
+        <rdfs:label xml:lang="es-ar">Local comercial</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Surface -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Surface">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#SwimmingPool -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#SwimmingPool">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Feature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Warehouse -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Warehouse">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rec#RealEstate"/>
+        <rdfs:label xml:lang="es-ar">Galpón</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#Literal -->
+
+    <owl:Class rdf:about="http://www.w3.org/2000/01/rdf-schema#Literal">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#Resource -->
+
+    <owl:Class rdf:about="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    
+
+
+    <!-- http://www.w3.org/2006/time#Instant -->
+
+    <owl:Class rdf:about="http://www.w3.org/2006/time#Instant">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+        <owl:disjointWith rdf:resource="http://www.w3.org/2006/time#ProperInterval"/>
+        <rdfs:label xml:lang="en">A temporal entity with zero extent or duration</rdfs:label>
+        <rdfs:label xml:lang="es">Una entidad temporal con una extensión o duración cero.</rdfs:label>
+        <rdfs:label xml:lang="en">Time instant</rdfs:label>
+        <rdfs:label xml:lang="es">instante de tiempo.</rdfs:label>
+        <skos:definition xml:lang="en">A temporal entity with zero extent or duration</skos:definition>
+        <skos:definition xml:lang="es">Una entidad temporal con una extensión o duración cero.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2006/time#Interval -->
+
+    <owl:Class rdf:about="http://www.w3.org/2006/time#Interval">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+        <rdfs:label xml:lang="en">A temporal entity with an extent or duration</rdfs:label>
+        <rdfs:label xml:lang="es">Una entidad temporal con una extensión o duración.</rdfs:label>
+        <rdfs:label xml:lang="en">Time interval</rdfs:label>
+        <rdfs:label xml:lang="es">intervalo de tiempo</rdfs:label>
+        <skos:definition xml:lang="en">A temporal entity with an extent or duration</skos:definition>
+        <skos:definition xml:lang="es">Una entidad temporal con una extensión o duración.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2006/time#ProperInterval -->
+
+    <owl:Class rdf:about="http://www.w3.org/2006/time#ProperInterval"/>
+    
+
+
+    <!-- http://www.w3.org/2006/time#TemporalEntity -->
+
+    <owl:Class rdf:about="http://www.w3.org/2006/time#TemporalEntity">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2006/time#Instant"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2006/time#Interval"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:label xml:lang="en">A temporal interval or instant.</rdfs:label>
+        <rdfs:label xml:lang="es">Un intervalo temporal o un instante.</rdfs:label>
+        <rdfs:label xml:lang="en">Temporal entity</rdfs:label>
+        <rdfs:label xml:lang="es">entidad temporal</rdfs:label>
+        <skos:definition xml:lang="en">A temporal interval or instant.</skos:definition>
+        <skos:definition xml:lang="es">Un intervalo temporal o un instante.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Agent -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Agent">
+        <owl:equivalentClass rdf:resource="https://w3id.org/rec#Agent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Document -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Document"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/fdioguardi/pronto/main/ontology/pronto.owl#RealEstateListing -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/fdioguardi/pronto/main/ontology/pronto.owl#RealEstateListing">
+        <rdfs:subClassOf rdf:resource="http://purl.org/goodrelations/v1#Offering"/>
+        <rdfs:subClassOf rdf:resource="http://rdfs.org/sioc/ns#Post"/>
+        <rdfs:label xml:lang="en">A public advertisement of some real estate.</rdfs:label>
+        <rdfs:label xml:lang="en">Real Estate Listing</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/fdioguardi/pronto/main/ontology/pronto.owl#SizeSpecification -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/fdioguardi/pronto/main/ontology/pronto.owl#SizeSpecification">
+        <rdfs:subClassOf rdf:resource="http://purl.org/goodrelations/v1#QuantitativeValue"/>
+        <rdfs:label xml:lang="en">A unit price specification is a conceptual entity that specifies the size of a given rec:Space. A space may be linked to multiple size specifications that specify alternative sizes for different types of measurements (e.g. total or covered surface).</rdfs:label>
+        <rdfs:label xml:lang="en">Size specification</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rec#Agent -->
+
+    <owl:Class rdf:about="https://w3id.org/rec#Agent"/>
+    
+
+
+    <!-- https://w3id.org/rec#Architecture -->
+
+    <owl:Class rdf:about="https://w3id.org/rec#Architecture">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rec#Space"/>
+        <rdfs:label>A designed/landscaped (or potentially designed/landscaped) part of the physical world that has a 3D spatial extent. E.g., a building site, a building, levels within the building, rooms, etc.</rdfs:label>
+        <rdfs:label>Architecture</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rec#Bathroom -->
+
+    <owl:Class rdf:about="https://w3id.org/rec#Bathroom">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rec#Room"/>
+        <rdfs:label>Bathroom</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rec#Bedroom -->
+
+    <owl:Class rdf:about="https://w3id.org/rec#Bedroom">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rec#Room"/>
+        <rdfs:label>Bedroom</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rec#Building -->
+
+    <owl:Class rdf:about="https://w3id.org/rec#Building">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rec#Architecture"/>
+        <rdfs:label>A confined building structure.</rdfs:label>
+        <rdfs:label>Building</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rec#Collection -->
+
+    <owl:Class rdf:about="https://w3id.org/rec#Collection"/>
+    
+
+
+    <!-- https://w3id.org/rec#Geometry -->
+
+    <owl:Class rdf:about="https://w3id.org/rec#Geometry"/>
+    
+
+
+    <!-- https://w3id.org/rec#OutdoorSpace -->
+
+    <owl:Class rdf:about="https://w3id.org/rec#OutdoorSpace">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rec#Architecture"/>
+        <rdfs:label>Outdoor space</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rec#Point -->
+
+    <owl:Class rdf:about="https://w3id.org/rec#Point">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rec#Geometry"/>
+        <rdfs:label>Point</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rec#RealEstate -->
+
+    <owl:Class rdf:about="https://w3id.org/rec#RealEstate">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rec#Collection"/>
+        <rdfs:label>The legal/administrative representation of some lands and/or buildings. I.e., &quot;Fastighet&quot; (Swedish), &quot;Ejendom&quot; (Denmark), etc.</rdfs:label>
+        <rdfs:label>Real Estate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rec#Region -->
+
+    <owl:Class rdf:about="https://w3id.org/rec#Region">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rec#Space"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rec#Room -->
+
+    <owl:Class rdf:about="https://w3id.org/rec#Room">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rec#Architecture"/>
+        <rdfs:label>Room</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rec#Site -->
+
+    <owl:Class rdf:about="https://w3id.org/rec#Site">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/rec#Architecture"/>
+        <rdfs:label>A piece of land upon which zero or more buildings may be situated.</rdfs:label>
+        <rdfs:label>Site</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/rec#Space -->
+
+    <owl:Class rdf:about="https://w3id.org/rec#Space">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+        <rdfs:label>A contiguous part of the physical world that contains or can contain sub-spaces. E.g., a Region can contain many Sites, which in turn can contain many Buildings.</rdfs:label>
+        <rdfs:label>Space</rdfs:label>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->

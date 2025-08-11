@@ -10,7 +10,10 @@ Notar que existen otras subclases de RealEstate y Feature, y se mencionan alguna
 Si bien la ontología no restringe el uso del rango de valores de cada característica, sería deseable aplicar un SHACL para asegurarse que sean usadas de la manera esperada. Esto es, para la característica dirección (AddressFeature), los valores asociados deberían ser instancias de PostalAddress, y no por ejemplo de PriceSpecification.
 Algunas características son propias del aviso (el Precio por ejemplo). Otras son del inmueble (como la Dirección), y otras describen alguna parte en particular de un inmueble (por ejemplo, describen el Terreno las Dimensiones de un inmueble, saber si es Irregular o no, si está en una esquina)
 
-Los valores y temporalidades de las distintas características respetan una jerarquía, donde io:hasValue permite obtener los valores de una característica (ej, el precio) sin importar su origen. Pero io:hasScraperValue obtendrá solo los valores recolectados por el scraper. Esto es análogo para el asunto de las temporalidades.
+Cada característica tiene un valor, un origen y una marca temporal.
+Los valores de las distintas características se modelan de manera diferente (por ejemplo el valor del precio se modela con una clase para representar un numero y una moneda). io:hasValue permite vincular los valores de una característica con la característica.
+El origen indica de qué fuente se obtuvo el valor de ese dato, y se representa con las subclases de io:Origin.
+Una marca temporal es un timestamp asociado al valor de la característica obtenida a partir de una fuente determinada, y se define a partir de la relación time:hasTime de una característica.
 
 Por ejemplo, a continuación se ejemplifica un anuncio de un inmueble en venta, cuyo precio obtenido a partir de los datos del anuncio es 17000 USD. El inmueble en cuestión es un Local comercial, ubicado en la dirección Luro e Independencia 3212, Mar del Plata
 
