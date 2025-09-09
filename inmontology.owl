@@ -858,11 +858,11 @@ Note 2: For Google, attaching a gr:validThrough statement to a gr:UnitPriceSpeci
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Feature"/>
     </owl:Class>
     
+$
 
+    <!-- http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Land -->
 
-    <!-- http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Lot -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Lot">
+    <owl:Class rdf:about="http://www.semanticweb.org/luciana/ontologies/2024/8/inmontology#Land">
         <rdfs:subClassOf rdf:resource="https://w3id.org/rec#RealEstate"/>
         <rdfs:label xml:lang="es-ar">Terreno</rdfs:label>
     </owl:Class>
