@@ -18,36 +18,87 @@ Una marca temporal es un timestamp asociado al valor de la característica obten
 Por ejemplo, a continuación se ejemplifica un anuncio de un inmueble en venta, cuyo precio obtenido a partir de los datos del anuncio es 17000 USD. El inmueble en cuestión es un Local comercial, ubicado en la dirección Luro e Independencia 3212, Mar del Plata
 
 ```
-io:listing_site2_A1405300735 a pronto:RealEstateListing ;
-rdfs:label "Local Mar Del Plata Vendo O Permuto Por Auto U$s 19.000"^^xsd:string ;
-dc:date "2024-01-29T00:00:00"^^xsd:dateTime ;
-gr:hasBusinessFunction gr:Sell ;
-sioc:about io:real_estate_site2_A1405300735 ;
-sioc:has_creator io:account_site2_97219375 ;
-sioc:has_space pronto:site2 ;
-sioc:id "A1405300735"^^xsd:string ;
-sioc:read_at "2024-02-02T00:00:00"^^xsd:dateTime ;
-io:hasFeature [ a io:Precio ;
-    io:hasDetail [ a io:TemporalFeature ;
-    io:hasScraperTime [ a time:Instant ;
-        time:inXSDDateTimeStamp "2024-02-02T00:00:00"^^xsd:dateTime ] ;
-    io:hasScraperValue [ a gr:UnitPriceSpecification ;
-        gr:hasCurrency "USD"^^xsd:string ;
-        gr:hasCurrencyValue "17500.0"^^xsd:float ;
-        gr:priceType "BASE"^^xsd:string ] ] ] .
+:listing_site3_46639008 a pronto:RealEstateListing ;
+    dc:date "2024-02-10T00:00:00"^^xsd:dateTime ;
+    rdfs:label "Local en Venta Calle 56 Esquina 19"^^xsd:string ;
+    gr:hasBusinessFunction gr:Sell ;
+    sioc:about :real_estate_site3_46639008 ;
+    sioc:has_creator :account_site3_Stephanie_Flores ;
+    sioc:has_space pronto:site3 ;
+    sioc:id "46639008"^^xsd:string ;
+    sioc:read_at "2024-02-02T00:00:00"^^xsd:dateTime ;
+    :hasListingFeature :feature_price_1_listing_site3_46639008 , :feature_price_2_listing_site3_46639008 , :feature_price_3_listing_site3_46639008.
 
-io:real_estate_site2_A1405300735 a io:Local ;
-io:hasFeature io:feature_address_real_estate_site2_A1405300735 ;
-rec:includes io:space_building_site2_A1405300735,
-io:space_land_site2_A1405300735 .
+:feature_price_1_listing_site3_46639008 a :BasePrice ;
+    :hasPriceValue [ a gr:UnitPriceSpecification ;
+            gr:hasCurrency "USD"^^xsd:string ;
+            gr:hasCurrencyValue "50000.0"^^xsd:double ] ;
+    :hasOrigin :Scraper ;
+    :hasTime [ a time:Instant ;
+            time:inXSDDateTimeStamp "2024-02-02T00:00:00"^^xsd:dateTime ] .
 
-io:feature_address_real_estate_site2_A1405300735 a io:Direccion ;
-io:hasDetail [ a io:TemporalFeature ;
-    io:hasScraperTime [ a time:Instant ;
-        time:inXSDDateTimeStamp "2024-02-02T00:00:00"^^xsd:dateTime ] ;
-    io:hasScraperValue [ a io:PostalAddress ;
-        io:address "luro e independencia 3212"^^xsd:string ;
-        io:city io:district_Mar%20del%20Plata_Bs.As.%20Costa%20Atlántica ;
-        io:neighborhood io:neiborhood_province_Bs.As.%2520Costa%2520Atlática_district_Mar%2520del%2520Plata_Bs.As.%2520Costa%2520Atlántica_Centro ;
-    io:province io:province_Bs.As.%20Costa%20Atlántica ] ] .
+:feature_price_2_listing_site3_46639008 a :BasePrice ;
+    :hasPriceValue [ a gr:UnitPriceSpecification ;
+            gr:hasCurrency "USD"^^xsd:string ;
+            gr:hasCurrencyValue "45000.0"^^xsd:double ] ;
+    :hasOrigin :Scraper ;
+    :hasTime [ a time:Instant ;
+            time:inXSDDateTimeStamp "2024-03-02T00:00:00"^^xsd:dateTime ] .
+
+:feature_price_3_listing_site3_46639008 a :BasePrice ;
+    :hasPriceValue [ a gr:UnitPriceSpecification ;
+            gr:hasCurrency "USD"^^xsd:string ;
+            gr:hasCurrencyValue "45000.0"^^xsd:double ] ;
+    :hasOrigin :Scraper ;
+    :hasTime [ a time:Instant ;
+            time:inXSDDateTimeStamp "2024-05-02T00:00:00"^^xsd:dateTime ] .
+
+:real_estate_site3_46639008 a :Store ;
+    :hasRealEstateFeature :feature_address_1_real_estate_site3_46639008,
+        :feature_age_1_real_estate_site3_46639008 ,
+        :feature_covered_1_space_land_site3_46639008,
+        :feature_total_1_space_land_site3_46639008 ;
+    rec:includes :space_building_site3_46639008,
+        :space_land_site3_46639008 .
+
+:space_building_site3_46639008 a rec:Building .
+
+:space_land_site3_46639008 a rec:Site ;
+    geo:hasGeometry [ a geo:Geometry ;
+            geo:asWKT "<http://www.opengis.net/def/crs/EPSG/0/4326> POINT(-57.9577123 -34.9290869)"^^geo:wktLiteral ] .
+
+:feature_address_1_real_estate_site3_46639008 a :Address ;
+    :hasAddressValue [ a :PostalAddress ;
+            :address "56 1100"^^xsd:string ;
+            :city :municipality_La_Plata_province_Buenos_Aires ;
+            :province :province_Buenos_Aires ] ;
+    :hasOrigin :Scraper ;
+    :hasTime [ a time:Instant ;
+            time:inXSDDateTimeStamp "2024-02-02T00:00:00"^^xsd:dateTime ] .
+
+:feature_covered_1_space_land_site3_46639008 a :CoveredSurface ;
+    :hasSurfaceValue [ a pronto:SizeSpecification ;
+            gr:hasUnitOfMeasurement "m²"^^xsd:string ;
+            gr:hasValue "28"^^xsd:double  ] ;
+    :hasOrigin :AVE ;
+    :hasTime [ a time:Instant ;
+            time:inXSDDateTimeStamp "2024-02-02T00:00:00"^^xsd:dateTime ] .
+
+:feature_total_1_space_land_site3_46639008 a :TotalSurface ;
+    :hasSurfaceValue [ a pronto:SizeSpecification ;
+            gr:hasUnitOfMeasurement "m²"^^xsd:string ;
+            gr:hasValue "28"^^xsd:double  ] ;
+    :hasOrigin :AVE ;
+    :hasTime [ a time:Instant ;
+            time:inXSDDateTimeStamp "2024-02-02T00:00:00"^^xsd:dateTime ] .
+
+:feature_age_1_real_estate_site3_46639008 a :PropertyAge ;
+    :hasValue "10"^^xsd:integer ;
+    :hasOrigin :Scraper ;
+    :hasTime [ a time:Instant ;
+            time:inXSDDateTimeStamp "2024-02-02T00:00:00"^^xsd:dateTime ] .
+
+:account_site3_Stephanie_Flores a sioc:UserAccount ;
+    sioc:id "30357009"^^xsd:string ;
+    sioc:name "Stephanie Flores"^^xsd:string .
 ```
