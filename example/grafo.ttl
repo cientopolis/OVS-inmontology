@@ -15,6 +15,7 @@
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix schema: <https://schema.org/> .
+@prefix brick: <https://brickschema.org> .
 
 
 dcterms:date a owl:DatatypeProperty ;
