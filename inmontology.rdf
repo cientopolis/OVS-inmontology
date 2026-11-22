@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#IrregularLot">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A lot whose shape is not rectangular or otherwise regular.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://sw.cientopolis.org/inmontology#RealEstateFeature"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#hasOrigin">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://sw.cientopolis.org/inmontology#Feature"/>
+    <rdfs:range rdf:resource="http://sw.cientopolis.org/inmontology#Origin"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology/">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <rdfs:label xml:lang="en">inmontology</rdfs:label>
+    <rdfs:comment xml:lang="en">An ontology for representing real estate listings, properties and their features, geographic and administrative regions, and railway entities in the project datasets.</rdfs:comment>
+    <owl:imports rdf:resource="http://purl.org/dc/terms/"/>
+    <owl:imports rdf:resource="http://purl.org/goodrelations/v1"/>
+    <owl:imports rdf:resource="http://rdfs.org/sioc/ns#"/>
+    <owl:imports rdf:resource="http://www.opengis.net/ont/geosparql"/>
+    <owl:imports rdf:resource="http://www.w3.org/2006/time"/>
+    <owl:imports rdf:resource="https://w3id.org/rec/building/3.3/"/>
+    <owl:imports rdf:resource="https://w3id.org/rec/core/3.3/"/>
+    <owl:imports rdf:resource="https://w3id.org/rec/metadata/3.3/"/>
+    <owl:imports rdf:resource="https://w3id.org/rec/units/3.3/"/>
+    <owl:imports rdf:resource="http://sw.cientopolis.org/inmontology/spatial"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/pronto#RealEstateListing">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A public advertisement of some real estate.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/goodrelations/v1#Offering"/>
+    <rdfs:subClassOf rdf:resource="http://rdfs.org/sioc/ns#Post"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#hasLength">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://sw.cientopolis.org/inmontology#LotSide"/>
+    <rdfs:range rdf:resource="http://sw.cientopolis.org/pronto#SizeSpecification"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#Farm">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="es">Campo</rdfs:label>
+    <rdfs:comment xml:lang="en">A rural property used for agricultural or related purposes.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/rec/core/RealEstate"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#municipality">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://sw.cientopolis.org/inmontology#PostalAddress"/>
+    <rdfs:range rdf:resource="http://sw.cientopolis.org/inmontology#Municipality"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#ListingFeature">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A feature that describes a real estate listing rather than the real estate itself.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://sw.cientopolis.org/inmontology#Feature"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#AVE">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">The AVE method used to retrieve an entity.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://sw.cientopolis.org/inmontology#Origin"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#Hotel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A real estate property intended to provide temporary accommodation to guests.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/rec/core/RealEstate"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#FacadeOrientation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">The compass orientation of a building facade.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://sw.cientopolis.org/inmontology#RealEstateFeature"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#PreSale">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A boolean listing feature indicating that a property is offered for sale before it is completed, for example while it is under construction.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://sw.cientopolis.org/inmontology#ListingFeature"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#Curation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">The manual curation method used to retrieve or enrich entities.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://sw.cientopolis.org/inmontology#Origin"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#Multioffering">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A boolean listing feature indicating that one publication advertises multiple real estate properties.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://sw.cientopolis.org/inmontology#ListingFeature"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#hasDepthSide">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://sw.cientopolis.org/inmontology#LotDimensions"/>
+    <rdfs:range rdf:resource="http://sw.cientopolis.org/inmontology#LotSide"/>
+    <rdfs:subPropertyOf rdf:resource="http://sw.cientopolis.org/inmontology#hasLotSide"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#hasPriceValue">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://sw.cientopolis.org/inmontology#Price"/>
+    <rdfs:range rdf:resource="http://purl.org/goodrelations/v1#PriceSpecification"/>
+    <rdfs:subPropertyOf rdf:resource="http://sw.cientopolis.org/inmontology#hasValue"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#Warehouse">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A building intended primarily for storage or industrial use.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/rec/core/RealEstate"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#Surface">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A feature that represents a surface area of real estate.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://sw.cientopolis.org/inmontology#RealEstateFeature"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#FOT">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">The total floor area ratio (FOT), relating a building's total floor area to its lot area.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://sw.cientopolis.org/inmontology#RealEstateFeature"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#Municipality">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A municipality or partido within a province, represented as a geographic region.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/rec/core/Region"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#MaintenanceFee">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A recurring fee for the maintenance or shared expenses of a property.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://sw.cientopolis.org/inmontology#Price"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#hasSurfaceValue">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://sw.cientopolis.org/inmontology#Surface"/>
+    <rdfs:range rdf:resource="http://sw.cientopolis.org/pronto#SizeSpecification"/>
+    <rdfs:subPropertyOf rdf:resource="http://sw.cientopolis.org/inmontology#hasValue"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#hasAddressValue">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://sw.cientopolis.org/inmontology#Address"/>
+    <rdfs:range rdf:resource="http://sw.cientopolis.org/inmontology#PostalAddress"/>
+    <rdfs:subPropertyOf rdf:resource="http://sw.cientopolis.org/inmontology#hasValue"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#Province">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A province represented as an administrative and geographic region.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/rec/core/Region"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#hasListingFeature">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://sw.cientopolis.org/pronto#RealEstateListing"/>
+    <rdfs:range rdf:resource="http://sw.cientopolis.org/inmontology#ListingFeature"/>
+    <rdfs:subPropertyOf rdf:resource="http://sw.cientopolis.org/inmontology#hasFeature"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#CoveredSurface">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">The portion of a property's surface area that is covered.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://sw.cientopolis.org/inmontology#Surface"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#hasLotSide">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://sw.cientopolis.org/inmontology#LotDimensions"/>
+    <rdfs:range rdf:resource="http://sw.cientopolis.org/inmontology#LotSide"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#Town">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A locality or municipal subdivision, such as a delegation, within a municipality.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/rec/core/Region"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#BasePrice">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">The initial or base selling price of a property.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://sw.cientopolis.org/inmontology#Price"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#Store">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A commercial premises offered as real estate.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/rec/core/RealEstate"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#hasTime">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://sw.cientopolis.org/inmontology#Feature"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2006/time#hasTime"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/pronto#SizeSpecification">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A unit price specification is a conceptual entity that specifies the size of a given rec:Space. A space may be linked to multiple size specifications that specify alternative sizes for different types of measurements (e.g. total or covered surface).</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/goodrelations/v1#QuantitativeValue"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#RealEstateFeature">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A feature that describes the real estate itself.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://sw.cientopolis.org/inmontology#Feature"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#hasValue">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://sw.cientopolis.org/inmontology#Feature"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#Condominium">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="es">Lote PH</rdfs:label>
+    <rdfs:comment xml:lang="en">A property unit classified as a condominium or horizontal property unit.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/rec/core/RealEstate"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#neighborhood">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://sw.cientopolis.org/inmontology#PostalAddress"/>
+    <rdfs:range rdf:resource="http://sw.cientopolis.org/inmontology#Neighborhood"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#LotSide">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A measurable side or boundary segment of a lot.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://sw.cientopolis.org/inmontology#RealEstateFeature"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#Feature">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">An aspect of a real estate or listing, including a value and the time at which it was recorded.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#GatedNeighborhood">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A residential neighborhood with controlled access, including gated communities and country clubs.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://sw.cientopolis.org/inmontology#Neighborhood"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#UndividedLot">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A lot that cannot be subdivided for sale.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://sw.cientopolis.org/inmontology#RealEstateFeature"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#hasFeature">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">Feature of a real estate or listing.</rdfs:comment>
+    <rdfs:range rdf:resource="http://sw.cientopolis.org/inmontology#Feature"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#SwimmingPool">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A feature indicating whether a property has its own swimming pool.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://sw.cientopolis.org/inmontology#RealEstateFeature"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#Land">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A parcel of land offered as real estate.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/rec/core/RealEstate"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#House">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A residential building intended to serve as a dwelling.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/rec/core/RealEstate"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#UncoveredSurface">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">The portion of a property's surface area that is not covered.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://sw.cientopolis.org/inmontology#Surface"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#Origin">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">The method by which these entities were retrieved.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#hasRealEstateFeature">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/rec/core/RealEstate"/>
+    <rdfs:range rdf:resource="http://sw.cientopolis.org/inmontology#RealEstateFeature"/>
+    <rdfs:subPropertyOf rdf:resource="http://sw.cientopolis.org/inmontology#hasFeature"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#FacadesAmnt">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">The number of street-facing sides or entrances of a building.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://sw.cientopolis.org/inmontology#RealEstateFeature"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#CondominiumUnit">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">An individual real estate unit within a condominium.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/rec/core/RealEstate"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#PostalAddress">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A postal address associated with a real estate or one of its features.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#LandSurface">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">The surface area of the land associated with a property.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://sw.cientopolis.org/inmontology#Surface"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#CornerLot">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A lot located at the intersection of two or more streets.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://sw.cientopolis.org/inmontology#RealEstateFeature"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#Scraper">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">The web-scraping method used to retrieve entities from source websites.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://sw.cientopolis.org/inmontology#Origin"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#TotalSurface">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">The total surface area associated with a property.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://sw.cientopolis.org/inmontology#Surface"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#province">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://sw.cientopolis.org/inmontology#PostalAddress"/>
+    <rdfs:range rdf:resource="http://sw.cientopolis.org/inmontology#Province"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#ParkingLot">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A real estate unit intended for parking vehicles.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/rec/core/RealEstate"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#PropertyAge">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">The age of a property; a value of zero indicates that it is newly built.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://sw.cientopolis.org/inmontology#RealEstateFeature"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#hasFrontSide">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://sw.cientopolis.org/inmontology#LotDimensions"/>
+    <rdfs:range rdf:resource="http://sw.cientopolis.org/inmontology#LotSide"/>
+    <rdfs:subPropertyOf rdf:resource="http://sw.cientopolis.org/inmontology#hasLotSide"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#Price">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A price-related feature associated with a real estate listing.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://sw.cientopolis.org/inmontology#ListingFeature"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#town">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://sw.cientopolis.org/inmontology#PostalAddress"/>
+    <rdfs:range rdf:resource="http://sw.cientopolis.org/inmontology#Town"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#Apartment">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A real estate unit configured as an apartment.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/rec/core/RealEstate"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#address">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://sw.cientopolis.org/inmontology#PostalAddress"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#curatedBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://sw.cientopolis.org/inmontology#Feature"/>
+    <rdfs:range rdf:resource="http://rdfs.org/sioc/ns#UserAccount"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#hasLiteralValue">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://sw.cientopolis.org/inmontology#Feature"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#Neighborhood">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A neighborhood represented as a geographic region.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/rec/core/Region"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#Address">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A feature that represents the presence of an address for a real estate.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://sw.cientopolis.org/inmontology#RealEstateFeature"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#LotDimensions">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">The measurements of one or more front and depth segments of a lot.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://sw.cientopolis.org/inmontology#RealEstateFeature"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#reviewedBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://sw.cientopolis.org/inmontology#Feature"/>
+    <rdfs:range rdf:resource="http://rdfs.org/sioc/ns#UserAccount"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#PopularNeighborhood">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A working-class neighborhood listed in Argentina's RENABAP registry.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://sw.cientopolis.org/inmontology#Neighborhood"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology#dimensionExpression">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://sw.cientopolis.org/inmontology#LotDimensions"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/pronto#has_number_of_rooms">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+</rdf:RDF>

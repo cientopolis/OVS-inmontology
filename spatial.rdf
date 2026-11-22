@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology/ter#locatedIn">
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/rec/core/locatedIn"/>
+    <rdfs:domain rdf:resource="http://sw.cientopolis.org/inmontology/ter#Region"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://sw.cientopolis.org/inmontology/ter#Region"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology/rail#RailwayFeature">
+    <rdfs:comment xml:lang="en">A geographically represented railway entity, such as a station or railway line.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology/ter#Region">
+    <rdfs:comment xml:lang="en">A canonical geographic or administrative entity in the dataset.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/rec/core/Region"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology/ter#GatedNeighborhood">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="es">Barrio cerrado</rdfs:label>
+    <rdfs:comment xml:lang="en">A residential neighborhood with controlled access, including gated communities and country clubs.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://sw.cientopolis.org/inmontology/ter#Neighborhood"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology/ter#Province">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://sw.cientopolis.org/inmontology/ter#Region"/>
+    <rdfs:comment xml:lang="en">A province represented as an administrative and geographic region.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology/rail#RailwayLine">
+    <rdfs:subClassOf rdf:resource="http://sw.cientopolis.org/inmontology/rail#RailwayFeature"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A railway route represented as a geographic feature.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology/ter#Department">
+    <rdfs:subClassOf rdf:resource="http://sw.cientopolis.org/inmontology/ter#Region"/>
+    <rdfs:comment xml:lang="en">An administrative subdivision of a province; in Buenos Aires Province, this corresponds to a partido.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology/ter#Neighborhood">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A neighborhood represented as a geographic region.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://sw.cientopolis.org/inmontology/ter#Region"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology/rail#Station">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://sw.cientopolis.org/inmontology/rail#RailwayFeature"/>
+    <rdfs:comment xml:lang="en">A railway station represented as a geographic feature.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology/spatial">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <rdfs:label xml:lang="en">inmontology spatial module</rdfs:label>
+    <rdfs:comment xml:lang="en">The territorial and railway vocabularies represented as geographic features in the project datasets.</rdfs:comment>
+    <owl:imports rdf:resource="http://www.opengis.net/ont/geosparql"/>
+    <owl:imports rdf:resource="https://w3id.org/rec/core/3.3/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology/ter#PopularNeighborhood">
+    <rdfs:subClassOf rdf:resource="http://sw.cientopolis.org/inmontology/ter#Neighborhood"/>
+    <rdfs:label xml:lang="es">Barrio popular</rdfs:label>
+    <rdfs:comment xml:lang="en">A working-class neighborhood listed in Argentina's RENABAP registry.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sw.cientopolis.org/inmontology/ter#Locality">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A locality represented as a geographic and administrative region.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://sw.cientopolis.org/inmontology/ter#Region"/>
+  </rdf:Description>
+</rdf:RDF>

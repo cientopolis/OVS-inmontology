@@ -1,0 +1,463 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix gr: <http://purl.org/goodrelations/v1#> .
+@prefix io: <http://sw.cientopolis.org/inmontology#> .
+@prefix ns1: <https://karlhammar.com/owl2oas/o2o.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pronto: <http://sw.cientopolis.org/pronto#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rec: <https://w3id.org/rec/core/> .
+@prefix sioc: <http://rdfs.org/sioc/ns#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ter: <http://sw.cientopolis.org/inmontology/ter#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+io:AVE a owl:Class ;
+    rdfs:comment "The AVE method used to retrieve an entity."@en ;
+    rdfs:subClassOf io:Origin .
+
+io:Apartment a owl:Class ;
+    rdfs:comment "A real estate unit configured as an apartment."@en ;
+    rdfs:subClassOf rec:RealEstate .
+
+io:BasePrice a owl:Class ;
+    rdfs:comment "The initial or base selling price of a property."@en ;
+    rdfs:subClassOf io:Price .
+
+io:Condominium a owl:Class ;
+    rdfs:label "Lote PH"@es ;
+    rdfs:comment "A property unit classified as a condominium or horizontal property unit."@en ;
+    rdfs:subClassOf rec:RealEstate .
+
+io:CondominiumUnit a owl:Class ;
+    rdfs:comment "An individual real estate unit within a condominium."@en ;
+    rdfs:subClassOf rec:RealEstate .
+
+io:CornerLot a owl:Class ;
+    rdfs:comment "A lot located at the intersection of two or more streets."@en ;
+    rdfs:subClassOf io:RealEstateFeature .
+
+io:CoveredSurface a owl:Class ;
+    rdfs:comment "The portion of a property's surface area that is covered."@en ;
+    rdfs:subClassOf io:Surface .
+
+io:Curation a owl:Class ;
+    rdfs:comment "The manual curation method used to retrieve or enrich entities."@en ;
+    rdfs:subClassOf io:Origin .
+
+io:FOT a owl:Class ;
+    rdfs:comment "The total floor area ratio (FOT), relating a building's total floor area to its lot area."@en ;
+    rdfs:subClassOf io:RealEstateFeature .
+
+io:FacadeOrientation a owl:Class ;
+    rdfs:comment "The compass orientation of a building facade."@en ;
+    rdfs:subClassOf io:RealEstateFeature .
+
+io:FacadesAmnt a owl:Class ;
+    rdfs:comment "The number of street-facing sides or entrances of a building."@en ;
+    rdfs:subClassOf io:RealEstateFeature .
+
+io:Farm a owl:Class ;
+    rdfs:label "Campo"@es ;
+    rdfs:comment "A rural property used for agricultural or related purposes."@en ;
+    rdfs:subClassOf rec:RealEstate .
+
+io:GatedNeighborhood a owl:Class ;
+    rdfs:comment "A residential neighborhood with controlled access, including gated communities and country clubs."@en ;
+    rdfs:subClassOf io:Neighborhood .
+
+io:Hotel a owl:Class ;
+    rdfs:comment "A real estate property intended to provide temporary accommodation to guests."@en ;
+    rdfs:subClassOf rec:RealEstate .
+
+io:House a owl:Class ;
+    rdfs:comment "A residential building intended to serve as a dwelling."@en ;
+    rdfs:subClassOf rec:RealEstate .
+
+io:IrregularLot a owl:Class ;
+    rdfs:comment "A lot whose shape is not rectangular or otherwise regular."@en ;
+    rdfs:subClassOf io:RealEstateFeature .
+
+io:Land a owl:Class ;
+    rdfs:comment "A parcel of land offered as real estate."@en ;
+    rdfs:subClassOf rec:RealEstate .
+
+io:LandSurface a owl:Class ;
+    rdfs:comment "The surface area of the land associated with a property."@en ;
+    rdfs:subClassOf io:Surface .
+
+io:MaintenanceFee a owl:Class ;
+    rdfs:comment "A recurring fee for the maintenance or shared expenses of a property."@en ;
+    rdfs:subClassOf io:Price .
+
+io:Multioffering a owl:Class ;
+    rdfs:comment "A boolean listing feature indicating that one publication advertises multiple real estate properties."@en ;
+    rdfs:subClassOf io:ListingFeature .
+
+io:ParkingLot a owl:Class ;
+    rdfs:comment "A real estate unit intended for parking vehicles."@en ;
+    rdfs:subClassOf rec:RealEstate .
+
+io:PopularNeighborhood a owl:Class ;
+    rdfs:comment "A working-class neighborhood listed in Argentina's RENABAP registry."@en ;
+    rdfs:subClassOf io:Neighborhood .
+
+io:PreSale a owl:Class ;
+    rdfs:comment "A boolean listing feature indicating that a property is offered for sale before it is completed, for example while it is under construction."@en ;
+    rdfs:subClassOf io:ListingFeature .
+
+io:PropertyAge a owl:Class ;
+    rdfs:comment "The age of a property; a value of zero indicates that it is newly built."@en ;
+    rdfs:subClassOf io:RealEstateFeature .
+
+io:Scraper a owl:Class ;
+    rdfs:comment "The web-scraping method used to retrieve entities from source websites."@en ;
+    rdfs:subClassOf io:Origin .
+
+io:Store a owl:Class ;
+    rdfs:comment "A commercial premises offered as real estate."@en ;
+    rdfs:subClassOf rec:RealEstate .
+
+io:SwimmingPool a owl:Class ;
+    rdfs:comment "A feature indicating whether a property has its own swimming pool."@en ;
+    rdfs:subClassOf io:RealEstateFeature .
+
+io:TotalSurface a owl:Class ;
+    rdfs:comment "The total surface area associated with a property."@en ;
+    rdfs:subClassOf io:Surface .
+
+io:UncoveredSurface a owl:Class ;
+    rdfs:comment "The portion of a property's surface area that is not covered."@en ;
+    rdfs:subClassOf io:Surface .
+
+io:UndividedLot a owl:Class ;
+    rdfs:comment "A lot that cannot be subdivided for sale."@en ;
+    rdfs:subClassOf io:RealEstateFeature .
+
+io:Warehouse a owl:Class ;
+    rdfs:comment "A building intended primarily for storage or industrial use."@en ;
+    rdfs:subClassOf rec:RealEstate .
+
+io:address a owl:DatatypeProperty ;
+    rdfs:domain io:PostalAddress ;
+    rdfs:range xsd:string .
+
+io:curatedBy a owl:ObjectProperty ;
+    rdfs:domain io:Feature ;
+    rdfs:range sioc:UserAccount .
+
+io:dimensionExpression a owl:DatatypeProperty ;
+    rdfs:domain io:LotDimensions ;
+    rdfs:range xsd:string .
+
+io:hasAddressValue a owl:ObjectProperty ;
+    rdfs:domain io:Address ;
+    rdfs:range io:PostalAddress ;
+    rdfs:subPropertyOf io:hasValue .
+
+io:hasDepthSide a owl:ObjectProperty ;
+    rdfs:domain io:LotDimensions ;
+    rdfs:range io:LotSide ;
+    rdfs:subPropertyOf io:hasLotSide .
+
+io:hasFrontSide a owl:ObjectProperty ;
+    rdfs:domain io:LotDimensions ;
+    rdfs:range io:LotSide ;
+    rdfs:subPropertyOf io:hasLotSide .
+
+io:hasLength a owl:ObjectProperty ;
+    rdfs:domain io:LotSide ;
+    rdfs:range pronto:SizeSpecification .
+
+io:hasListingFeature a owl:ObjectProperty ;
+    rdfs:domain pronto:RealEstateListing ;
+    rdfs:range io:ListingFeature ;
+    rdfs:subPropertyOf io:hasFeature .
+
+io:hasLiteralValue a owl:DatatypeProperty ;
+    rdfs:domain io:Feature ;
+    rdfs:range rdfs:Literal .
+
+io:hasOrigin a owl:ObjectProperty ;
+    rdfs:domain io:Feature ;
+    rdfs:range io:Origin .
+
+io:hasPriceValue a owl:ObjectProperty ;
+    rdfs:domain io:Price ;
+    rdfs:range gr:PriceSpecification ;
+    rdfs:subPropertyOf io:hasValue .
+
+io:hasRealEstateFeature a owl:ObjectProperty ;
+    rdfs:domain rec:RealEstate ;
+    rdfs:range io:RealEstateFeature ;
+    rdfs:subPropertyOf io:hasFeature .
+
+io:hasSurfaceValue a owl:ObjectProperty ;
+    rdfs:domain io:Surface ;
+    rdfs:range pronto:SizeSpecification ;
+    rdfs:subPropertyOf io:hasValue .
+
+io:hasTime a owl:ObjectProperty ;
+    rdfs:domain io:Feature ;
+    rdfs:subPropertyOf time:hasTime .
+
+io:municipality a owl:ObjectProperty ;
+    rdfs:domain io:PostalAddress ;
+    rdfs:range io:Municipality .
+
+io:neighborhood a owl:ObjectProperty ;
+    rdfs:domain io:PostalAddress ;
+    rdfs:range io:Neighborhood .
+
+io:province a owl:ObjectProperty ;
+    rdfs:domain io:PostalAddress ;
+    rdfs:range io:Province .
+
+io:reviewedBy a owl:ObjectProperty ;
+    rdfs:domain io:Feature ;
+    rdfs:range sioc:UserAccount .
+
+io:town a owl:ObjectProperty ;
+    rdfs:domain io:PostalAddress ;
+    rdfs:range io:Town .
+
+<http://sw.cientopolis.org/inmontology/> a owl:Ontology ;
+    rdfs:label "inmontology"@en ;
+    rdfs:comment "An ontology for representing real estate listings, properties and their features, geographic and administrative regions, and railway entities in the project datasets."@en .
+
+<http://sw.cientopolis.org/inmontology/rail#RailwayLine> a owl:Class ;
+    rdfs:comment "A railway route represented as a geographic feature."@en ;
+    rdfs:subClassOf <http://sw.cientopolis.org/inmontology/rail#RailwayFeature> .
+
+<http://sw.cientopolis.org/inmontology/rail#Station> a owl:Class ;
+    rdfs:comment "A railway station represented as a geographic feature."@en ;
+    rdfs:subClassOf <http://sw.cientopolis.org/inmontology/rail#RailwayFeature> .
+
+<http://sw.cientopolis.org/inmontology/spatial> a owl:Ontology ;
+    rdfs:label "inmontology spatial module"@en ;
+    rdfs:comment "The territorial and railway vocabularies represented as geographic features in the project datasets."@en .
+
+ter:Department a owl:Class ;
+    rdfs:comment "An administrative subdivision of a province; in Buenos Aires Province, this corresponds to a partido."@en ;
+    rdfs:subClassOf ter:Region .
+
+ter:GatedNeighborhood a owl:Class ;
+    rdfs:label "Barrio cerrado"@es ;
+    rdfs:comment "A residential neighborhood with controlled access, including gated communities and country clubs."@en ;
+    rdfs:subClassOf ter:Neighborhood .
+
+ter:Locality a owl:Class ;
+    rdfs:comment "A locality represented as a geographic and administrative region."@en ;
+    rdfs:subClassOf ter:Region .
+
+ter:PopularNeighborhood a owl:Class ;
+    rdfs:label "Barrio popular"@es ;
+    rdfs:comment "A working-class neighborhood listed in Argentina's RENABAP registry."@en ;
+    rdfs:subClassOf ter:Neighborhood .
+
+ter:Province a owl:Class ;
+    rdfs:comment "A province represented as an administrative and geographic region."@en ;
+    rdfs:subClassOf ter:Region .
+
+ter:locatedIn a owl:ObjectProperty,
+        owl:TransitiveProperty ;
+    rdfs:domain ter:Region ;
+    rdfs:range ter:Region ;
+    rdfs:subPropertyOf rec:locatedIn .
+
+pronto:has_number_of_rooms a owl:DatatypeProperty .
+
+sioc:Post a owl:Class ;
+    rdfs:label "Post"@en ;
+    rdfs:comment "An article or message that can be posted to a Forum."@en ;
+    rdfs:isDefinedBy sioc: ;
+    rdfs:subClassOf sioc:Item,
+        foaf:Document .
+
+io:Address a owl:Class ;
+    rdfs:comment "A feature that represents the presence of an address for a real estate."@en ;
+    rdfs:subClassOf io:RealEstateFeature .
+
+io:Municipality a owl:Class ;
+    rdfs:comment "A municipality or partido within a province, represented as a geographic region."@en ;
+    rdfs:subClassOf rec:Region .
+
+io:Province a owl:Class ;
+    rdfs:comment "A province represented as an administrative and geographic region."@en ;
+    rdfs:subClassOf rec:Region .
+
+io:Town a owl:Class ;
+    rdfs:comment "A locality or municipal subdivision, such as a delegation, within a municipality."@en ;
+    rdfs:subClassOf rec:Region .
+
+pronto:RealEstateListing a owl:Class ;
+    rdfs:comment "A public advertisement of some real estate."@en ;
+    rdfs:subClassOf gr:Offering,
+        sioc:Post .
+
+time:hasTime a owl:ObjectProperty ;
+    rdfs:label "has time"@en,
+        "tiene tiempo"@es ;
+    rdfs:comment "Supports the association of a temporal entity (instant or interval) to any thing"@en,
+        "Proporciona soporte a la asociación de una entidad temporal (instante o intervalo) a cualquier cosa."@es ;
+    rdfs:range time:TemporalEntity ;
+    skos:definition "Supports the association of a temporal entity (instant or interval) to any thing"@en,
+        "Proporciona soporte a la asociación de una entidad temporal (instante o intervalo) a cualquier cosa."@es ;
+    skos:editorialNote "Feature at risk - added in 2017 revision, and not yet widely used. "@en,
+        "Característica arriesgada -añadida en la revisión del 2017 que no ha sido todavía utilizada de forma amplia."@es .
+
+rec:locatedIn a owl:ObjectProperty ;
+    rdfs:label "located in"@en ;
+    rdfs:range rec:Space .
+
+sioc:UserAccount a owl:Class ;
+    rdfs:label "User Account"@en ;
+    rdfs:comment "A user account in an online community site."@en ;
+    rdfs:isDefinedBy sioc: ;
+    rdfs:subClassOf foaf:OnlineAccount .
+
+io:hasFeature a owl:ObjectProperty ;
+    rdfs:comment "Feature of a real estate or listing."@en ;
+    rdfs:range io:Feature .
+
+io:hasLotSide a owl:ObjectProperty ;
+    rdfs:domain io:LotDimensions ;
+    rdfs:range io:LotSide .
+
+<http://sw.cientopolis.org/inmontology/rail#RailwayFeature> a owl:Class ;
+    rdfs:comment "A geographically represented railway entity, such as a station or railway line."@en ;
+    rdfs:subClassOf geo:Feature .
+
+ter:Neighborhood a owl:Class ;
+    rdfs:comment "A neighborhood represented as a geographic region."@en ;
+    rdfs:subClassOf ter:Region .
+
+pronto:SizeSpecification a owl:Class ;
+    rdfs:comment "A unit price specification is a conceptual entity that specifies the size of a given rec:Space. A space may be linked to multiple size specifications that specify alternative sizes for different types of measurements (e.g. total or covered surface)."@en ;
+    rdfs:subClassOf gr:QuantitativeValue .
+
+geo:Feature a owl:Class ;
+    rdfs:label "Feature"@en ;
+    dc:contributor "Matthew Perry" ;
+    dc:creator "OGC GeoSPARQL 1.0 Standard Working Group" ;
+    dc:date "2011-06-16"^^xsd:date ;
+    dc:description """
+      This class represents the top-level feature type. This class is 
+      equivalent to GFI_Feature defined in ISO 19156:2011, and it is 
+      superclass of all feature types.
+    """@en ;
+    rdfs:comment """
+      This class represents the top-level feature type. This class is 
+      equivalent to GFI_Feature defined in ISO 19156:2011, and it is 
+      superclass of all feature types.
+    """@en ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql>,
+        <http://www.opengis.net/spec/geosparql/1.0> ;
+    rdfs:subClassOf geo:SpatialObject ;
+    owl:disjointWith geo:Geometry ;
+    skos:definition """
+      This class represents the top-level feature type. This class is 
+      equivalent to GFI_Feature defined in ISO 19156:2011, and it is 
+      superclass of all feature types.
+    """@en ;
+    skos:prefLabel "Feature"@en .
+
+gr:Offering a owl:Class ;
+    rdfs:label "Offering"@en ;
+    rdfs:comment """An offering represents the public, not necessarily binding, not necessarily exclusive, announcement by a gr:BusinessEntity to provide (or seek) a certain gr:BusinessFunction for a certain gr:ProductOrService to a specified target audience. An offering is specified by the type of product or service or bundle it refers to, what business function is being offered (sales, rental, ...), and a set of commercial properties. It can either refer to 
+(1) a clearly specified instance (gr:Individual),
+(2) to a set of anonymous instances of a given type (gr:SomeItems),
+(3) a product model specification (gr:ProductOrServiceModel), see also section 3.3.3 of the GoodRelations Technical Report. 
+
+An offering may be constrained in terms of the eligible type of business partner, countries, quantities, and other commercial properties. The definition of the commercial properties, the type of product offered, and the business function are explained in other parts of this vocabulary in more detail.
+
+Example: Peter Miller offers to repair TV sets made by Siemens, Volkswagen Innsbruck sells a particular instance of a Volkswagen Golf at $10,000.
+
+Compatibility with schema.org: This class is a superclass to http://schema.org/Offer, since gr:Offering can also represent demand."""@en ;
+    rdfs:isDefinedBy <http://purl.org/goodrelations/v1> ;
+    owl:disjointWith gr:PriceSpecification,
+        gr:QuantitativeValue .
+
+gr:PriceSpecification a owl:Class ;
+    rdfs:label "Price specification"@en ;
+    rdfs:comment "The superclass of all price specifications."@en ;
+    rdfs:isDefinedBy <http://purl.org/goodrelations/v1> ;
+    owl:disjointWith gr:Offering,
+        gr:QuantitativeValue .
+
+gr:QuantitativeValue a owl:Class ;
+    rdfs:label "Quantitative value"@en ;
+    rdfs:comment """A quantitative value is a numerical interval that represents the range of a certain gr:quantitativeProductOrServiceProperty in terms of the lower and upper bounds for a particular gr:ProductOrService. It is to be interpreted in combination with the respective unit of measurement. Most quantitative values are intervals even if they are in practice often treated as a single point value.
+	
+Example: a weight between 10 and 25 kilogramms, a length between 10 and 15 milimeters.
+
+Compatibility with schema.org: This class is equivalent to http://schema.org/Quantity."""@en ;
+    rdfs:isDefinedBy <http://purl.org/goodrelations/v1> ;
+    owl:disjointWith gr:Offering,
+        gr:PriceSpecification .
+
+io:Neighborhood a owl:Class ;
+    rdfs:comment "A neighborhood represented as a geographic region."@en ;
+    rdfs:subClassOf rec:Region .
+
+io:Price a owl:Class ;
+    rdfs:comment "A price-related feature associated with a real estate listing."@en ;
+    rdfs:subClassOf io:ListingFeature .
+
+io:hasValue a owl:ObjectProperty ;
+    rdfs:domain io:Feature .
+
+io:ListingFeature a owl:Class ;
+    rdfs:comment "A feature that describes a real estate listing rather than the real estate itself."@en ;
+    rdfs:subClassOf io:Feature .
+
+io:LotDimensions a owl:Class ;
+    rdfs:comment "The measurements of one or more front and depth segments of a lot."@en ;
+    rdfs:subClassOf io:RealEstateFeature .
+
+io:LotSide a owl:Class ;
+    rdfs:comment "A measurable side or boundary segment of a lot."@en ;
+    rdfs:subClassOf io:RealEstateFeature .
+
+io:Origin a owl:Class ;
+    rdfs:comment "The method by which these entities were retrieved."@en .
+
+io:Surface a owl:Class ;
+    rdfs:comment "A feature that represents a surface area of real estate."@en ;
+    rdfs:subClassOf io:RealEstateFeature .
+
+rec:Region a owl:Class ;
+    rdfs:label "Region"@en ;
+    rdfs:comment "An administrative geospatial unit larger than the individual real estate. For instance, \"Lombary\", \"North America\", \"The Back Bay\", \"Elnätsområde Syd\", etc."@en ;
+    rdfs:subClassOf rec:Space .
+
+io:PostalAddress a owl:Class ;
+    rdfs:comment "A postal address associated with a real estate or one of its features."@en .
+
+ter:Region a owl:Class ;
+    rdfs:comment "A canonical geographic or administrative entity in the dataset."@en ;
+    rdfs:subClassOf geo:Feature,
+        rec:Region .
+
+io:Feature a owl:Class ;
+    rdfs:comment "An aspect of a real estate or listing, including a value and the time at which it was recorded."@en .
+
+rec:RealEstate a owl:Class ;
+    rdfs:label "Real estate"@en ;
+    rdfs:comment "The legal/administrative representation of some lands and/or buildings."@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom rec:Space ;
+            owl:onProperty rec:includes ],
+        [ a owl:Restriction ;
+            owl:onProperty rec:includes ;
+            owl:someValuesFrom rec:Space ],
+        rec:SpaceCollection ;
+    ns1:endpoint "realestate" ;
+    ns1:included true .
+
+io:RealEstateFeature a owl:Class ;
+    rdfs:comment "A feature that describes the real estate itself."@en ;
+    rdfs:subClassOf io:Feature .
+
