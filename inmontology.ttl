@@ -1,4 +1,5 @@
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix gr: <http://purl.org/goodrelations/v1#> .
@@ -6,13 +7,84 @@
 @prefix ns1: <https://karlhammar.com/owl2oas/o2o.owl#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix pronto: <http://sw.cientopolis.org/pronto#> .
+@prefix rail: <http://sw.cientopolis.org/inmontology/rail#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rec: <https://w3id.org/rec/core/> .
 @prefix sioc: <http://rdfs.org/sioc/ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix ter: <http://sw.cientopolis.org/inmontology/ter#> .
 @prefix time: <http://www.w3.org/2006/time#> .
+@prefix uom: <http://www.opengis.net/def/uom/OGC/1.0/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dcterms:issued a owl:DatatypeProperty ;
+    rdfs:range rdfs:Literal .
+
+geo:SpatialObject a owl:Class .
+
+geo:Geometry a owl:Class ;
+    rdfs:subClassOf geo:SpatialObject .
+
+geo:wktLiteral a rdfs:Datatype .
+
+geo:hasGeometry a owl:ObjectProperty ;
+    rdfs:range geo:Geometry .
+
+geo:asWKT a owl:DatatypeProperty ;
+    rdfs:domain geo:Geometry ;
+    rdfs:range geo:wktLiteral .
+
+gr:UnitPriceSpecification a owl:Class ;
+    rdfs:subClassOf gr:PriceSpecification .
+
+gr:hasCurrency a owl:DatatypeProperty ;
+    rdfs:domain gr:PriceSpecification ;
+    rdfs:range xsd:string .
+
+gr:hasCurrencyValue a owl:DatatypeProperty ;
+    rdfs:domain gr:PriceSpecification ;
+    rdfs:range xsd:float .
+
+gr:hasUnitOfMeasurement a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+gr:hasValue a owl:DatatypeProperty ;
+    rdfs:domain gr:QuantitativeValue ;
+    rdfs:range rdfs:Literal .
+
+rec:Collection a owl:Class .
+
+rec:Space a owl:Class .
+
+rec:SpaceCollection a owl:Class ;
+    rdfs:subClassOf rec:Collection .
+
+rec:includes a owl:ObjectProperty ;
+    rdfs:domain rec:Collection .
+
+sioc:Item a owl:Class .
+
+sioc:Space a owl:Class .
+
+sioc:about a owl:ObjectProperty ;
+    rdfs:domain sioc:Item .
+
+sioc:has_creator a owl:ObjectProperty ;
+    rdfs:range sioc:UserAccount .
+
+sioc:has_space a owl:ObjectProperty ;
+    rdfs:range sioc:Space .
+
+time:TemporalEntity a owl:Class .
+
+time:Instant a owl:Class ;
+    rdfs:subClassOf time:TemporalEntity .
+
+time:inXSDDateTimeStamp a owl:DatatypeProperty ;
+    rdfs:domain time:Instant ;
+    rdfs:range xsd:dateTimeStamp .
+
+uom:metre a owl:NamedIndividual .
 
 io:AVE a owl:Class ;
     rdfs:comment "The AVE method used to retrieve an entity."@en ;
@@ -227,13 +299,13 @@ io:town a owl:ObjectProperty ;
     rdfs:label "inmontology"@en ;
     rdfs:comment "An ontology for representing real estate listings, properties and their features, geographic and administrative regions, and railway entities in the project datasets."@en .
 
-<http://sw.cientopolis.org/inmontology/rail#RailwayLine> a owl:Class ;
+rail:RailwayLine a owl:Class ;
     rdfs:comment "A railway route represented as a geographic feature."@en ;
-    rdfs:subClassOf <http://sw.cientopolis.org/inmontology/rail#RailwayFeature> .
+    rdfs:subClassOf rail:RailwayFeature .
 
-<http://sw.cientopolis.org/inmontology/rail#Station> a owl:Class ;
+rail:Station a owl:Class ;
     rdfs:comment "A railway station represented as a geographic feature."@en ;
-    rdfs:subClassOf <http://sw.cientopolis.org/inmontology/rail#RailwayFeature> .
+    rdfs:subClassOf rail:RailwayFeature .
 
 <http://sw.cientopolis.org/inmontology/spatial> a owl:Ontology ;
     rdfs:label "inmontology spatial module"@en ;
@@ -326,7 +398,7 @@ io:hasLotSide a owl:ObjectProperty ;
     rdfs:domain io:LotDimensions ;
     rdfs:range io:LotSide .
 
-<http://sw.cientopolis.org/inmontology/rail#RailwayFeature> a owl:Class ;
+rail:RailwayFeature a owl:Class ;
     rdfs:comment "A geographically represented railway entity, such as a station or railway line."@en ;
     rdfs:subClassOf geo:Feature .
 
@@ -460,4 +532,3 @@ rec:RealEstate a owl:Class ;
 io:RealEstateFeature a owl:Class ;
     rdfs:comment "A feature that describes the real estate itself."@en ;
     rdfs:subClassOf io:Feature .
-
